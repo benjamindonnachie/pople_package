@@ -147,8 +147,12 @@ def orca_run(method, basis,optfreq,custombasis, correlated, values, charge, mult
         with open("input.com", "a") as com_f:
             com_f.write("end\n")
 
-    os.system(values["orca_exe"] + " input.com > input.out")
-    os.system("cat input.com >> ORCA.inp")
-    os.system("cat input.out >> ORCA.out")
+    # Add basic check for errors from ORCA
+    result = os.system(values["orca_exe"] + " input.com > input.out")
+    if (result == 0):
+        os.system("cat input.com >> ORCA.inp")
+        os.system("cat input.out >> ORCA.out")
+    else:
+        assert False, "ORCA ERROR"
     #os.system("rm -f input*")
 ####### orca_run - E
