@@ -132,7 +132,7 @@ def orca_g4mp2(values, start_time_main):
             os.system("mv temp.xyz  inp.xyz") 
         
             os.system("nfreq=$( grep 'The total number of vibrations considered is ' input.out  | tail -1 | awk '{print $8}' > scr_lc0);  \
-                 nfreq=$( cat scr_lc0); grep -A$(( $nfreq+4 )) 'IR SPECTRUM' input.out | tail -$nfreq | awk '{print $2}' > freq.txt")
+                 nfreq=$( cat scr_lc0); grep -A$(( $nfreq+5 )) 'IR SPECTRUM' input.out | tail -$nfreq | awk '{print $2}' > freq.txt")
 
             ### need to extract nfreq from scr file
             tr = linecache.getline("scr_lc0",1).strip()
