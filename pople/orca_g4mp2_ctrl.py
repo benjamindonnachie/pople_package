@@ -11,7 +11,7 @@ def orca_g4mp2_ctrl(user_method_type):
 #### IMPORTANT: use only "true"  or "false" here -- this section is case sensitive  ### THANKS!
     if user_method_type == "g4mp2-xp" or user_method_type == "G4MP2-XP" or user_method_type == "G4MP2-xp" or user_method_type == "g4mp2-XP":
 
-        val = { "method_opt_freq" : "B3LYP/G DEFGRID3 VeryTightSCF def2/J GridX9 Printbasis ", 
+        val = { "method_opt_freq" : "B3LYP/G DEFGRID3 VeryTightSCF def2/J Printbasis ", 
         "basis_opt_freq" : "GTBAS3",
         "custombasis_opt_freq" : "true",
 
